@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Aula 01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <fieldset>
+            <legend>Formulário</legend>
+            <form action="" method="get">
+                    <div class="campos">
+                        <div class="labelNome">
+                            <label for="nome">Nome</label>
+                            <input type="text" name="campoNome" id="idNome">
+                        </div>
+                        <div class="labelTelefone">
+                            <label for="telefone">Telefone</label>
+                            <input type="number" name="campoTelefone" id="idTelefone">
+                        </div>
+                        <div class="labelEmail">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="campoEmail" id="idEmail">
+                        </div>
+                    </div>
+
+                    <div class="labelPessoa">
+                        <p>Tipo Pessoa</p>
+                        <div class="pessoaFisica">
+                            <input type="radio" name="pessoaFisica" id="idPessoaFisica" value="Física">
+                            <label for="">Pessoa Física</label>
+                        </div>
+                        <div class="pessoaJuridica">
+                            <input type="radio" name="pessoaFisica" id="idPessoaFisica">
+                            <label for="">Pessoa Jurídica</label>
+                        </div>
+                    </div>
+                    
+                    <div class="botao">
+                        <input type="submit" value="Enviar" class="estiloBotao">
+                    </div>
+            </form>
+        </fieldset>
+    </main>
+</body>
+</html>

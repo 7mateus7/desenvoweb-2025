@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+    background-image: url(imagens/imagem-fundo.jpg);
+    font-family: "Ubuntu", sans-serif;
+}
+
+form{
+    border-radius: 10px;
+    color: white;
+    background-image:linear-gradient(to right,rgba(255, 255, 255, 0), rgba(51, 51, 85, 0.692));
+
+}
+
+fieldset{
+    border-radius: 10px;
+    color: white;
+}
+
+.campos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px 15px 10px 0px;
+    margin: 10px 15px 0px 10px;
+}
+
+.labelNome{
+    padding: 0px 15px 0px 15px;
+    font-size: larger;
+}
+
+.labelTelefone{
+    padding: 0px 15px 0px 15px;
+    font-size: larger;
+}
+
+.labelEmail{
+    padding: 0px 15px 0px 15px;
+    font-size: larger;
+}
+
+.labelPessoa{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.labelPessoa{
+    align-items: center;
+}
+
+.pessoaFisica{
+   padding: 10px 15px 10px 15px;
+}
+
+.pessoaJuridica{
+   padding: 10px 15px 10px 15px;
+}
+
+.botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.estiloBotao{
+    font-family: "Ubuntu", sans-serif;;
+    border-radius: 10px;
+    font-size: 18px;
+}
