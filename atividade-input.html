@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Input</title>
+</head>
+<body>
+    <header>
+        <h1>Atividade Input</h1>
+    </header>
+
+    <main>
+        <fieldset>
+            <legend>Cadastro de Pessoa</legend>
+
+        <ul>
+            <li>
+                <label for="labelNome">Nome:</label>
+                <input required maxlength="100" type="text" name="nomeName" id="nomeId">
+            </li>
+
+            <li>
+                <label for="labelSobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenomeName" id="sobrenomeId" required maxlength="100">
+            </li>
+
+            <li>
+                <label for="labelEmail">E-mail:</label>
+                <input type="email" name="emailName" id="emailId" required>
+            </li>
+
+            <li>
+                <label for="labelDataNasc">Data de Nascimento:</label>
+                <input type="date" name="" id="" datemin="01/01/1920" datemax="01/01/2024">
+            </li>
+
+            <li>
+                <label for="labelSexo">Sexo:</label>
+                <label for="Masc">Masculino</label>
+                <input type="radio" name="masculinoName" id="masculinoId">
+                <label for="Femn">Feminino</label>
+                <input type="radio" name="femininoName" id="femininoId">
+            </li>
+
+            <li>
+                <label for="labelEndereco">Endereço:</label>
+                <input type="text" name="enderecoName" id="enderecoId" maxlength="200">
+            </li>
+
+            <li>
+                <label for="labelCEP">CEP:</label>
+                <input type="text" name="cepName" id="cepId" maxlength="10">
+            </li>
+
+            <li>
+                <label for="labelCor">Cor Favorita</label>
+                <input type="color" name="colorName" id="colorId">
+            </li>
+
+            <li>
+                <label for="labelEstado">Estado:</label>
+                <select name="estado" id="estadoId" autofocus>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="RS" autofocus="">Rio Grande do Sul</option>
+                    <option value="PR">Paraná</option>
+                </select>
+            </li>
+        </ul>
+        </fieldset>
+    </main>
+</body>
+</html>
