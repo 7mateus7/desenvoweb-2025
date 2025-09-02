@@ -1,0 +1,23 @@
+div{
+    margin: 5px 0px 10px 0px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.container01{
+    background-color: rgba(95, 95, 216, 0.773);
+}
+
+.container02{
+    background-color: rgba(95, 95, 216, 0.679);;
+}
+
+.container03{
+    background-color: rgba(95, 95, 216, 0.423); ;
+}
+
+fieldset{
+    border-radius: 10px;
+}
