@@ -1,0 +1,13 @@
+body{
+    background-color: rgba(128, 128, 128, 0.389);
+}
+
+.user_pass_fail {
+  border: 3px solid red;
+  background-color: #ffe0e0;
+}
+
+.user_pass_corect{
+    border: 3px solid rgba(80, 159, 80, 0.674);
+    background-color: white;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validaDados(){
+            var user = document.getElementById('userId').value;
+            var senha = document.getElementById('passId').value;
+
+            if (user === "user" && senha == "pass"){
+                alert("Usuário Logado")
+                document.getElementById('userId').classList.add("user_pass_corect");
+                document.getElementById('passId').classList.add("user_pass_corect");
+
+            } else{
+                document.getElementById('userId').classList.add("user_pass_fail");
+                document.getElementById('passId').classList.add("user_pass_fail");
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="">User:</label>
+    <input type="text" name="inputUser" id="userId">
+    <label for="">Senha:</label>
+    <input type="password" name="inputPass" id="passId">
+    <input type="submit" value="LOGIN" onclick="validaDados()">
+</body>
+</html>
