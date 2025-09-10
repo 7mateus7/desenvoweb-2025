@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+</head>
+<body>
+<table border="1px" id="tabela-notas">
+    <thead id="cabecalho">
+        <tr bgcolor="gray" id="linhaCabecalho">
+            <th rowspan="2">Aluno</th>
+            <th colspan="3">Semestre 01</th>
+            <th colspan="3">Semestre 02</th>
+            <th colspan="3">Semestre 03</th>
+        </tr>
+        <tr >
+            <th>Nota 01</th>
+            <th>Nota 02</th>
+            <th>Nota 03</th>
+
+            <th>Nota 01</th>
+            <th>Nota 02</th>
+            <th>Nota 03</th>
+
+            <th>Nota 01</th>
+            <th>Nota 02</th>
+            <th>Nota 03</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>João</td>
+            <td class="nota">10</td>
+            <td class="nota">8</td>
+            <td class="nota">9</td>
+            
+            <td class="nota">6</td>
+            <td class="nota">8.7</td>
+            <td class="nota">10</td>
+            <td class="nota">6</td>
+            <td class="nota">7</td>
+            <td class="nota">9</td>
+        </tr>
+
+        <tr>
+            <td>Maria</td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+        </tr>
+
+        <tr>
+            <td class="nota">José</td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+        </tr>
+
+        <tr>
+            <td>Paulo</td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+        </tr>
+
+        <tr>
+            <td>Miguel</td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+        </tr>
+
+        <tr>
+            <td>Julia</td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+            <td class="nota"></td>
+        </tr>
+    </tbody>
+    <tfoot class="rodape">
+
+    </tfoot>
+</table>
+<button onclick="mediaColuna()">Média das Notas</button>
+<button id="mediaLinha" onclick="mediaLinha()">Média dos Alunos</button>
+</body>
+<script src="script.js"></script>
+</html>
+
+<!-- table = Estrutura da tabela
+     thead = Cabeçalho da tabela
+     tbody = Agrupa o conteúdo do corpo
+     tr = Linha da tabela
+     th = célula de cabeçalho
+     td = Cálula de dados
+-->
