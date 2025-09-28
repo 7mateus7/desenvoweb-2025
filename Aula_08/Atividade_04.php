@@ -1,6 +1,6 @@
 <?php
     $SALARIO_1 = 0;
-    $SALARIO_2 = 50;
+    $SALARIO_2 = 0;
     
    if ($SALARIO_1 > $SALARIO_2) {
         echo "O Valor da variável 1 (".$SALARIO_1.") é maior que o valor da variável 2 (". $SALARIO_2 . ")";
@@ -10,7 +10,7 @@
         echo "Os valores são iguais";
    }
 
-   for ($x = 1; $x <=100; $x++){
+   for ($x = 0; $x <=100; $x++){
         if ($x == 50){
             break;
         }
