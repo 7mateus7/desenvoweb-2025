@@ -5,15 +5,15 @@
     
     function declaraArray(){ //FUNÇÃO PARA DECLARAR O ARRAY COM NOTAS E FALTAS
         $notas = array("10","9","8","7","6");
-        $faltas = array("segunda-feira"=>"3", "terça-feira"=>"2", "quarta-feira"=>"0", "quinta-feira"=>"1", "sexta-feira"=>"5");
+        $faltas = array("segunda-feira"=>"0", "terça-feira"=>"0", "quarta-feira"=>"0", "quinta-feira"=>"0", "sexta-feira"=>"0");
 
         return [$notas, $faltas];
     }
 
     function calculaMedia($notas){ //FUNÇÃO PARA CALCULAR A MÉDIA
         $numNotas = count($notas);
-
         $soma = 0;
+
         for($i = 0; $i < $numNotas; $i++){
            $soma = $soma + $notas[$i]; 
         };
@@ -24,43 +24,51 @@
 
     function aprovacao($media){ //FUNÇÃO PARA APRESENTAR A APROVAÇÃO
         if($media >= 7){
-            echo "Parabéns :) Sua média é " . $media . " , por isso você está APROVADO!";
+            return TRUE;
         }else{
-            echo "Que pena :( Sua média é " . $media . ", por isso você está REPROVADO!";
+            return FALSE;
         }
     }
 
+    function mensagem($situacao){ //APRESENTA A SITUAÇÃO FINAL DO ALUNO
+        echo "Você está " . $situacao;
+    }
+
     function calculaFrequencia($faltas){
-        define("numAula", 100);
+        $numAula = count($faltas);
 
         $somaFaltas = 0;
         foreach($faltas as $chave => $valor){
             $somaFaltas = $somaFaltas + $valor;
         }
         
-        $presencaAluno = numAula - $somaFaltas;
-        $presencaFinal = ($presencaAluno / numAula) * 100;
+        $presencaAluno = $numAula - $somaFaltas;
+        $presencaFinal = ($presencaAluno / $numAula) * 100;
         
         return $presencaFinal;
     }
 
     function frequencia($presenca){
        if($presenca >= 70){
-        echo "Parabéns! Sua presença é maior que 70%. Por isso está aprovado.";
+        return TRUE;
        }else{
-        echo "Que Pena. Sua presença é menor que 70%. Por isso está reprovado.";
+        return FALSE;
        }
     }
 
-    [$varNotas, $varFaltas] = declaraArray();
+    [$varNotas, $varFaltas] = declaraArray(); //CHAMA FUNÇÃO PARA DECLARAR OS ARRAYS
 
-    $mediaNotas = calculaMedia($varNotas);
+    $mediaNotas = calculaMedia($varNotas); //FUNÇÃO PARA CALCULAR A MÉDIA
 
     echo "A média das notas informada é de: $mediaNotas";
 
     quebraLinha();
 
-    aprovacao($mediaNotas);
+    if($mediaFinal =$mediaFinal = aprovacao($mediaNotas)){ //APRESENTA A SITUAÇÃO (APROVADO OU REPROVADO)
+        mensagem("Aprovado");
+    }else{
+        mensagem("Reprovado");
+    }
 
     $frequenciaFinal = calculaFrequencia($varFaltas);
 
@@ -70,5 +78,9 @@
 
     quebraLinha();
 
-    frequencia($frequenciaFinal);
+    if($situacaoFrequencia = frequencia($frequenciaFinal)){ //APRESENTA A SITUAÇÃO (APROVADO OU REPROVADO)
+        mensagem("Aprovado");
+    }else{
+        mensagem("Reprovado");
+    }
 ?>
