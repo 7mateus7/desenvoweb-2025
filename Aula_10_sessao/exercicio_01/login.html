@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Login</title>
+</head>
+<body>
+    <form action="/Aula_10_sessao/login.php" method="POST">
+        <fieldset>
+            <legend>LOGIN</legend>
+            <label for="User"> USUÁRIO:
+                <input type="text" name="user" id="userId">
+            </label>
+
+            <label for="Pass"> SENHA:
+                <input type="password" name="pass" id="passId">
+            </label>
+
+            <br>
+
+            <input type="submit" value="LOGIN">
+            <a href="acesso.php">ACESSAR</a>
+            <a href="encerra.php">ENCERRAR SESSÃO</a>
+        </fieldset>
+    </form>
+</body>
+</html>
