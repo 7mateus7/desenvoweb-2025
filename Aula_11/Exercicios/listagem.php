@@ -17,21 +17,22 @@
             echo "<th>Estado</th>";
             echo "</tr>";
 
-            $row = pg_fetch_assoc($result);
-
-            while($row){
+            while($row = pg_fetch_assoc($result)){
                 echo "<tr>";
-                echo "<td>". $row['pescodigo'] . "</td>";
-                echo "<td>". $row['pesnome'] . "</td>";
-                echo "<td>". $row['pessobrenome'] . "</td>";
-                echo "<td>". $row['pesemail'] . "</td>";
-                echo "<td>". $row['pespassword'] . "</td>";
-                echo "<td>". $row['pescidade'] . "</td>";
-                echo "<td>". $row['pesestado'] . "</td>";
+                echo "<td>". htmlspecialchars($row['pescodigo']) . "</td>";
+                echo "<td>". htmlspecialchars($row['pesnome']) . "</td>";
+                echo "<td>". htmlspecialchars($row['pessobrenome']) . "</td>";
+                echo "<td>". htmlspecialchars($row['pesemail']) . "</td>";
+                echo "<td>". htmlspecialchars($row['pespassword']) . "</td>";
+                echo "<td>". htmlspecialchars($row['pescidade']) . "</td>";
+                echo "<td>". htmlspecialchars($row['pesestado']) . "</td>";
                 echo "</tr>";
                 $row = pg_fetch_assoc($result);
             }
             echo "</table>";
         }
+        
+
+        echo "<a href='Exercicio_01.html'>RETORNAR</a>";
     }
 ?>

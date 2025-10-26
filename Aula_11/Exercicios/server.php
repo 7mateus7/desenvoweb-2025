@@ -1,12 +1,12 @@
 <?php 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         function coletaDados(){
-            $infoNome = $_POST['nome'];
-            $infoSobrenome = $_POST['sobrenome'];
-            $infoemail = $_POST['email'];
-            $infoSenha = $_POST['senha'];
-            $infoCidade = $_POST['cidade'];
-            $infoEstado = $_POST['estado'];
+            $infoNome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $infoSobrenome =filter_input(INPUT_POST, 'sobrenome', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $infoemail = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            $infoSenha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $infoCidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $infoEstado = filter_input(INPUT_POST, 'estado', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
             return [$infoNome, $infoSobrenome, $infoemail, $infoSenha, $infoCidade, $infoEstado];
         }
@@ -30,6 +30,6 @@
             echo "Não foi possível se conectar ao banco";
         }
 
-        echo "<a href='/Aula_11/Exercicio)01.html'>RETORNAR</a>";
+        echo "<a href='/Aula_11/Exercicios/Exercicio_01.html'>RETORNAR</a>";
     }
 ?>

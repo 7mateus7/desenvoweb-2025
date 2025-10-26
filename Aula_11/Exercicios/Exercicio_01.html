@@ -8,7 +8,7 @@
 <body>
     <fieldset>
         <legend>Informando Dados para o Banco</legend>
-        <form action="/Aula_11/server.php" method="POST">
+        <form action="/Aula_11/Exercicios/server.php" method="POST">
             <label for="nome">Nome:
                 <input type="text" name="nome" id="idNome">
             </label>
@@ -35,6 +35,16 @@
             <br>
             <input type="submit" value="ENVIAR">
         </form>
+        <br>
+        <form action="filtragem.php" method="post">
+            <label for="filtro">Filtre pelo Usuário:</label>
+            <input type="text" name="filtroInfo" id="idFiltro" placeholder="Informe o nome do Usuário">
+            <input type="submit" value="FILTRAR">
+        </form>
+
+        <a href="listagem.php" target="_blank" rel="noopener noreferrer">Listagem do Banco de Dados (Sem Filtro)</a>
+        <br>
+
     </fieldset>
 </body>
 </html>
