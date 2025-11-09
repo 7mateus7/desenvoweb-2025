@@ -1,33 +1,51 @@
 <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        
-        require_once('db.php');
+        function limpaDados(){
+            $comentario = filter_input(INPUT_POST, 'areaFeedback', FILTER_SANITIZE_SPECIAL_CHARS);
+            $respostas = $_POST['respostas'] ?? [];
+            $dispositivoInfo = filter_input(INPUT_POST, 'id_dispositivo', FILTER_VALIDATE_INT);
 
-        $pdo = getDbConnection();
-        $comentarioAdd = filter_input(INPUT_POST, 'areaFeedback', FILTER_SANITIZE_SPECIAL_CHARS);
-        $respostasInfo = $_POST['respostas'];
-        $dispositivo = filter_input(INPUT_POST, 'id_dispositivo', FILTER_VALIDATE_INT);
+            return ['comentario_limpo' => $comentario,
+                    'respostas_limpas' => $respostas,
+                    'dispositivo_limpo' => $dispositivoInfo];
+        }
 
-        try {
+        function salvarAvaliacao($comentario, $respostas, $dispositivoInfo, $pdo){
+            try {
             
             $comando = "INSERT INTO avaliacoes (id_dispositivo, id_pergunta, resposta, feedback_textual) 
                         VALUES (:id_dispositivo, :id_pergunta, :resposta, :feedback_textual)";
             $stmt = $pdo->prepare($comando);
 
-            foreach ($respostasInfo as $id_pergunta => $resposta) {
+            foreach ($respostas as $id_pergunta => $resposta) {
                 $stmt->execute([
-                    ':id_dispositivo' => $dispositivo,
+                    ':id_dispositivo' => $dispositivoInfo,
                     ':id_pergunta' => (int)$id_pergunta,
                     ':resposta' => (int)$resposta,     
-                    ':feedback_textual' => $comentarioAdd
+                    ':feedback_textual' => $comentario
                 ]);
             }
-
-            header("Location: ../public/obrigado.html");
-            exit; 
 
         } catch (PDOException $e) {
             die("Erro ao salvar a avaliação no banco de dados: " . $e->getMessage());
         }
+        }
+
+        function redirecionar(){
+            header("Location: ../public/obrigado.html");
+            exit;
+        }
+
+        require_once('db.php');
+        $pdo = getDbConnection();
+
+        $dadoslimpos = limpaDados();
+        $comentarioAdd = $dadoslimpos['comentario_limpo'];
+        $respostasInfo = $dadoslimpos['respostas_limpas'];
+        $dispositivo = $dadoslimpos['dispositivo_limpo'];
+
+        salvarAvaliacao($comentarioAdd, $respostasInfo, $dispositivo, $pdo);
+
+        redirecionar(); 
     }
 ?>
