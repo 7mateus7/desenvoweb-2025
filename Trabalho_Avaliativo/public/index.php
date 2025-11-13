@@ -21,7 +21,7 @@
 
             <?php echo buscarHtmlDasPerguntas(); ?>
 
-            <button type="button" id="botaoProx">Próximo</button>
+            <div class="botao-container"><button type="button" id="botaoProx">Próximo</button></div>
             
             <div class="blocoFinal">
                 <div class="feedbackBloco">

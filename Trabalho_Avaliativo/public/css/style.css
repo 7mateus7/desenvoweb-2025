@@ -1,7 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body{
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  border-radius: 10px;
+  background-color: rgba(176, 172, 172, 0.635);
+}
+
+.container{
+    max-width: 800px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 15px;
+}
+
+.container > h1{
+    text-align: center;
+}
+
+.container > footer{
+    text-align: center;
+}
+
 .blocoPergunta{
     display: none;
+    text-align: center;
 }
 
 .blocoFinal{
     display: none;
+}
+
+input[type='radio']{
+    opacity: 0;
+    position: absolute;
+}
+
+input[type="radio"]:checked + label {
+    color: white; 
+    border-color: #28a745;
+    border: 3px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.escala-btn{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px  solid black;
+}
+
+
+.escala-0 { background-color: #d9534f; }
+.escala-1 { background-color: #e06c68; }
+.escala-2 { background-color: #e68581; }
+
+.escala-3 { background-color: #ec9d7d; }
+.escala-4 { background-color: #f3b478; }
+.escala-5 { background-color: #f9cb74; }
+
+.escala-6 { background-color: #ffe16f; }
+.escala-7 { background-color: #c9d965; }
+.escala-8 { background-color: #a0cf5c; }
+
+.escala-9 { background-color: #77c552; }
+.escala-10 { background-color: #5cb85c; }
+
+.pergunta-texto {
+  font-size: 1.5rem;  
+  font-weight: 500;   
+  margin-bottom: 20px; 
+}
+
+#botaoProx {
+  background-color: #617d9b; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-container{
+  text-align: right; 
+  margin-top: 20px;  
 }

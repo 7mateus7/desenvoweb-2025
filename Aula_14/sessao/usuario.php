@@ -1,35 +1,36 @@
-<?php 
-    class Session{
-        private $sessionID;
-        private $status;
-        private $usuario;
-        private $dataHoraInicio;
-        private $dataHoraUltimoAcesso;
+<?php
 
-        public function __construct()
-        {
-            $this->iniciaSessao();
+    class Usuario {
+        private $userName;
+        private $userLogin;
+        private $userPass;
+
+        public function loadUsuario($userLogin) { 
+            return true;
         }
 
-        public function iniciaSessao(){
-            session_start();
-            $this->sessionID = session_id();
-            $this->dataHoraInicio = date('d/m/Y');
-        }
-        public function encerraSessao(){
-            $this->gravaDadosSessao('dataHoraInicio',$this->dataHoraInicio);
-            $this->gravaDadosSessao('dataHoraUltimoAcesso',$this->dataHoraUltimoAcesso);
-            $this->gravaDadosSessao('usuario', $this->usuario->getIdUsuario);
-
-            session_unset();
-            session_destroy();
+        public function getUserName() {
+            return $this->userName;
         }
 
-        public function getUsuarioSessao(){
-            return $this-> $usuario;
+        public function getUserLogin() {
+            return $this->userLogin;
         }
 
-        
+        public function getUserPass() {
+            return $this->userPass;
+        }
+
+        public function setUserName($userName) {
+            $this->userName = $userName;
+        }
+
+        public function setUserLogin($userLogin) {
+            $this->userLogin = $userLogin;
+        }
+
+        public function setUserPass($userPass) {
+            $this->userPass = $userPass;
+        }
     }
-
 ?>
