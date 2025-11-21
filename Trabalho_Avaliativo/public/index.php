@@ -1,5 +1,7 @@
 <?php 
     require_once('../src/perguntas.php');
+    $id_url = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $id_dispositivo = $id_url ? $id_url : 1;
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +19,14 @@
         <h1>Avaliação de Qualidade de Serviços</h1>
         
         <form action="../src/respostas.php" method="POST">
-            <input type="hidden" name="id_dispositivo" value="1">
+            <input type="hidden" name="id_dispositivo" value="<?php echo $id_dispositivo; ?>">
 
-            <?php echo buscarHtmlDasPerguntas(); ?>
+            <?php echo buscarHtmlDasPerguntas($id_dispositivo); ?>
 
-            <div class="botao-container"><button type="button" id="botaoProx">Próximo</button></div>
+            <div class="botoes">
+                <span class="botao-container-ant"><button type="button" id="botaoAnt">Anterior</button></span>
+                <span class="botao-container-prox"><button type="button" id="botaoProx">Próximo</button></span>
+            </div>
             
             <div class="blocoFinal">
                 <div class="feedbackBloco">

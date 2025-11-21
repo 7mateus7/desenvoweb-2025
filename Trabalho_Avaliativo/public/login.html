@@ -4,16 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Efetue Login</title>
+    <link rel="stylesheet" href="css/css_login.css">
 </head>
 <body>
-    <form action="../src/auth.php" method="post">
-        <label for="emailInfo">Login:</label>
-        <input type="email" name="emailInfo" id="emailInfo">
 
-        <label for="senhaInfo">Senha:</label>
-        <input type="password" name="senhaInfo" id="senhaInfo">
+    <main class="login-container">
+        
+        <div class="login-header">
+            <h2>Bem-vindo</h2>
+            <p>Faça login para continuar</p>
+        </div>
 
-        <input type="submit" value="ENTRAR">
-    </form>   
+        <form action="../src/auth.php" method="post" class="login-form">
+            
+            <div class="input-group">
+                <label for="emailInfo">Login:</label>
+                <input type="email" name="emailInfo" id="emailInfo" placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senhaInfo">Senha:</label>
+                <input type="password" name="senhaInfo" id="senhaInfo" placeholder="Digite sua senha" required>
+            </div>
+
+            <div class="actions">
+                <input type="submit" value="ENTRAR" class="btn-login">
+            </div>
+
+        </form>
+    </main>
+
 </body>
 </html>

@@ -88,7 +88,27 @@ input[type="radio"]:checked + label {
   font-weight: bold;
 }
 
-.botao-container{
+#botaoAnt {
+  background-color: #617d9b; 
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-container-prox{
   text-align: right; 
-  margin-top: 20px;  
+  margin-top: 20px;
+}
+
+.botao-container-ant{
+  text-align: left; 
+  margin-top: 20px  
+}
+
+.botoes{
+  display: flex;
+  justify-content: space-between;
 }

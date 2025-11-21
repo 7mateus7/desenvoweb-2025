@@ -1,4 +1,12 @@
 <?php
+    require_once('db.php');
+
+    function redirecionar(){
+        header("Location: ../public/obrigado.html");
+        exit;
+    }
+
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         function limpaDados(){
             $comentario = filter_input(INPUT_POST, 'areaFeedback', FILTER_SANITIZE_SPECIAL_CHARS);
@@ -31,12 +39,6 @@
         }
         }
 
-        function redirecionar(){
-            header("Location: ../public/obrigado.html");
-            exit;
-        }
-
-        require_once('db.php');
         $pdo = getDbConnection();
 
         $dadoslimpos = limpaDados();
