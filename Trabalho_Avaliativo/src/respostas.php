@@ -6,19 +6,17 @@
         exit;
     }
 
+    function limpaDados(){
+        $comentario = filter_input(INPUT_POST, 'areaFeedback', FILTER_SANITIZE_SPECIAL_CHARS);
+        $respostas = $_POST['respostas'] ?? [];
+        $dispositivoInfo = filter_input(INPUT_POST, 'id_dispositivo', FILTER_VALIDATE_INT);
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        function limpaDados(){
-            $comentario = filter_input(INPUT_POST, 'areaFeedback', FILTER_SANITIZE_SPECIAL_CHARS);
-            $respostas = $_POST['respostas'] ?? [];
-            $dispositivoInfo = filter_input(INPUT_POST, 'id_dispositivo', FILTER_VALIDATE_INT);
+        return ['comentario_limpo' => $comentario,
+                'respostas_limpas' => $respostas,
+                'dispositivo_limpo' => $dispositivoInfo];
+    }
 
-            return ['comentario_limpo' => $comentario,
-                    'respostas_limpas' => $respostas,
-                    'dispositivo_limpo' => $dispositivoInfo];
-        }
-
-        function salvarAvaliacao($comentario, $respostas, $dispositivoInfo, $pdo){
+            function salvarAvaliacao($comentario, $respostas, $dispositivoInfo, $pdo){
             try {
             
             $comando = "INSERT INTO avaliacoes (id_dispositivo, id_pergunta, resposta, feedback_textual) 
@@ -38,6 +36,9 @@
             die("Erro ao salvar a avaliação no banco de dados: " . $e->getMessage());
         }
         }
+
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $pdo = getDbConnection();
 

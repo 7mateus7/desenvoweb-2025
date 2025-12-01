@@ -1,0 +1,113 @@
+/* --- Configurações Gerais da Página --- */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4; /* Fundo cinza claro para destacar o formulário */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente (se a altura permitir) */
+    min-height: 100vh;
+}
+
+/* --- Container (O "Cartão" do Formulário) --- */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px; /* Limita a largura para não ficar muito esticado */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    margin: 20px;
+}
+
+/* --- Título --- */
+.container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+    border-bottom: 2px solid #009879; /* Detalhe verde da identidade visual */
+    display: inline-block;
+    padding-bottom: 5px;
+    /* Truque para centralizar o bloco do título */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- Grupos de Inputs --- */
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Estilo dos Inputs e Selects */
+.grupo-formulario input[type="text"],
+.grupo-formulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    transition: border-color 0.3s;
+}
+
+/* Efeito de Foco (Ao clicar no campo) */
+.grupo-formulario input[type="text"]:focus,
+.grupo-formulario select:focus {
+    border-color: #009879; /* Fica verde ao digitar */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 152, 121, 0.3);
+}
+
+/* --- Área de Botões (Ações) --- */
+.acoes-formulario {
+    display: flex;
+    justify-content: space-between; /* Separa os botões (um na esquerda, um na direita) */
+    margin-top: 30px;
+    gap: 15px; /* Espaço entre eles caso a tela seja pequena */
+}
+
+/* Estilo Base dos Botões */
+.btn-salvar,
+.btn-cancelar {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none; /* Remove sublinhado do link */
+    text-align: center;
+    transition: opacity 0.3s;
+    flex: 1; /* Faz os botões ocuparem larguras iguais */
+}
+
+/* Botão Salvar (Verde - Ação Principal) */
+.btn-salvar {
+    background-color: #009879;
+    color: white;
+}
+
+.btn-salvar:hover {
+    background-color: #007f65;
+}
+
+/* Botão Cancelar (Cinza - Ação Secundária) */
+.btn-cancelar {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #7f8c8d;
+}

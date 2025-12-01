@@ -3,7 +3,7 @@
 
     function gerarTabelaPerguntas(){
         $pdo = getDbConnection();
-        $consultaLeitura = "SELECT * FROM perguntas ORDER BY 4,1";
+        $consultaLeitura = "SELECT * FROM perguntas ORDER BY 1,4";
 
         $stmt = $pdo->query($consultaLeitura);
         $perguntas_geradas = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@
                 case 1:
                     $status = "<span style='color: green; font-weight: bold;'>Ativo</span>";
                     break;
-                case 2:
+                case 0:
                     $status = "<span style='color: red; font-weight: bold;'>Desativo</span>";
                     break;
                 default:
