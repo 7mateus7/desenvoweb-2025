@@ -7,6 +7,13 @@
         header('Location: login.php');
         exit;
     }
+
+    function coletaUrl(){
+        $id_url = filter_input(INPUT_GET, 'erro', FILTER_SANITIZE_SPECIAL_CHARS);
+        if($id_url == 'tem_respostas'){
+            echo gerarMensagemErro();
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,5 +33,7 @@
             <a href="criar_pergunta.php">Criar Pergunta?</a>
         </div>
     </div>
+
+    <?= coletaURL()?>
 </body>
 </html>

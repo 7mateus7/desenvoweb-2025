@@ -35,7 +35,8 @@
             $htmlPerguntas .= "<td>".$item['texto_pergunta']."</td>";
             $htmlPerguntas .= "<td>".$status."</td>";
             $htmlPerguntas .= "<td>".$item['setor']."</td>";
-            $htmlPerguntas .= "<td> <a href='editar.php?id=".$item['id_pergunta']."'>Editar</a> <a href='excluir.php?id=".$item['id_pergunta']."'>Excluir</a></td>";
+            $htmlPerguntas .= "<td> <a href='editar.php?id=".$item['id_pergunta']."'>Editar</a> 
+                                    <a href='excluir.php?id=".$item['id_pergunta']."' onclick='return confirm(\"Tem certeza que deseja excluir?\");'>Excluir</a>";
             $htmlPerguntas .= "</tr>";
         }
         $htmlPerguntas .= "</tbody>";
@@ -43,4 +44,16 @@
 
         return $htmlPerguntas;
     }
+
+    function gerarMensagemErro(){
+    $htmlErro = '<div class="alerta-erro">
+                    <div class="icone">✖</div> 
+                    <div>
+                        <strong>Não foi possível excluir</strong>
+                        <span>Esta pergunta possui respostas vinculadas e não pode ser removida.</span>
+                    </div>
+                </div>';
+
+    return $htmlErro;
+}
 ?>

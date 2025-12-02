@@ -1,0 +1,147 @@
+/* Importando a fonte padrão do projeto */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* --- Configurações Gerais --- */
+body {
+    font-family: "Ubuntu", sans-serif;
+    background-color: #f4f4f4; /* Fundo cinza claro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- O Cartão do Formulário --- */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px; /* Largura confortável para leitura */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+/* --- Título --- */
+.container h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 1.6em;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Detalhe verde abaixo do título */
+.container h1::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background-color: #009879;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- Campos do Formulário --- */
+.grupo-formulario {
+    margin-bottom: 20px;
+}
+
+.grupo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500; /* Peso médio da fonte Ubuntu */
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* Inputs e Selects */
+.grupo-formulario input[type="text"],
+.grupo-formulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+/* Efeito ao clicar no campo */
+.grupo-formulario input[type="text"]:focus,
+.grupo-formulario select:focus {
+    border-color: #009879; /* Verde do sistema */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 152, 121, 0.15); /* Halo verde suave */
+}
+
+/* --- Botões de Ação --- */
+.acoes-formulario {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn-salvar,
+.btn-cancelar {
+    flex: 1; /* Faz os dois botões terem o mesmo tamanho */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-family: "Ubuntu", sans-serif;
+}
+
+/* Botão Salvar (Verde) */
+.btn-salvar {
+    background-color: #009879;
+    color: white;
+}
+
+.btn-salvar:hover {
+    background-color: #007f65;
+    transform: translateY(-2px); /* Leve subida ao passar o mouse */
+}
+
+/* Botão Cancelar (Cinza) */
+.btn-cancelar {
+    background-color: #95a5a6;
+    color: white;
+    display: flex;       /* Necessário para centralizar texto no <a> */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.btn-cancelar:hover {
+    background-color: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px; /* Margem lateral no celular */
+        padding: 25px;
+    }
+    
+    .acoes-formulario {
+        flex-direction: column-reverse; /* No celular, Salvar fica em cima, Cancelar embaixo */
+    }
+    
+    .btn-salvar, .btn-cancelar {
+        width: 100%;
+    }
+}
