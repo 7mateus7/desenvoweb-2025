@@ -35,16 +35,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
     botaoAnt.addEventListener('click', function(){
         
-        if(perguntaAtual === 0 || perguntaAtual > perguntas.length){
-                botaoAnt.style.display = 'none';
+        if(perguntaAtual === perguntas.length){
+                blocoFinal.style.display = 'none';
+                botaoProx.style.display = 'block'
+                perguntaAtual --;
+                perguntas[perguntaAtual].style.display = 'block';
         }else{
             perguntas[perguntaAtual].style.display = 'none';
-            perguntaAtual--;
-            if(perguntaAtual === 0){
-                botaoAnt.style.display = 'none';
-
-            }
+            perguntaAtual --;
             perguntas[perguntaAtual].style.display = 'block';
+        }
+        if(perguntaAtual === 0){
+                    botaoAnt.style.display = 'none';
         }
     });
 
