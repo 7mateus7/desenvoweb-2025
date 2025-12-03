@@ -1,21 +1,235 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-*{
+body {
     font-family: "Ubuntu", sans-serif;
+    background-color: #f4f4f4; 
+    margin: 0;
+    padding: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
-th { background-color: #007bff; color: white; }
-
-.container-logout{
-    text-align: right;
-     margin-bottom: 15px
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1000px; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
-.link-logout{
-    color: red; 
+.container h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.container h1::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #009879;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-logout {
+    text-align: right; 
+    margin-bottom: 30px;
+}
+
+.link-logout {
     text-decoration: none;
-     font-weight: bold;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
 }
 
+.link-logout:hover {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+}
+
+/* --- NOVAS REGRAS ADICIONADAS PARA O PAINEL --- */
+
+/* Estilo do container de filtro (que estava sem estilo no seu código original) */
+.filtro-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.filtro-container label {
+    margin-right: 10px;
+    color: #555;
+    font-weight: 500;
+}
+
+.filtro-container select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95em;
+    color: #333;
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.filtro-container select:hover,
+.filtro-container select:focus {
+    border-color: #009879;
+}
+
+/* Largura das colunas da tabela */
+.col-id {
+    width: 50px;
+}
+.col-media {
+    width: 100px;
+}
+
+/* Cores das Notas (necessário pois removemos o style inline do PHP) */
+.nota-alta {
+    color: #27ae60; /* Verde */
+}
+.nota-media {
+    color: #f39c12; /* Laranja */
+}
+.nota-baixa {
+    color: #c0392b; /* Vermelho */
+}
+
+/* Estilo para quando a tabela está vazia */
+.mensagem-vazia {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
+
+/* --- FIM DAS NOVAS REGRAS --- */
+
+.tabela-perguntas {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95em;
+    min-width: 400px;
+    border-radius: 8px 8px 0 0; 
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.tabela-perguntas thead tr {
+    background-color: #009879; 
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabela-perguntas th,
+.tabela-perguntas td {
+    padding: 12px 15px;
+}
+
+.tabela-perguntas tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.tabela-perguntas tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9; 
+}
+
+.tabela-perguntas tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tabela-perguntas td a {
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85em;
+    margin-right: 5px;
+    transition: opacity 0.3s;
+    color: white;
+    display: inline-block;
+}
+
+.tabela-perguntas td a[href*='editar'] {
+    background-color: #3498db;
+}
+
+.tabela-perguntas td a[href*='excluir'] {
+    background-color: #e74c3c;
+}
+
+.tabela-perguntas td a:hover {
+    opacity: 0.85;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.alerta-erro {
+    background-color: #fff;
+    border-left: 5px solid #e74c3c;
+    color: #333;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    animation: slideDown 0.5s ease;
+}
+
+.alerta-erro .icone {
+    font-size: 1.4rem;
+    margin-right: 15px;
+    color: #e74c3c;
+}
+
+.alerta-erro strong {
+    display: block;
+    color: #c0392b;
+    margin-bottom: 3px;
+}
+
+.alerta-erro span {
+    font-size: 0.9em;
+    color: #666;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        overflow-x: auto; 
+    }
+    
+    .tabela-perguntas {
+        font-size: 0.85em;
+    }
+    
+    .tabela-perguntas td a {
+        padding: 4px 8px;
+        font-size: 0.8em;
+        margin-bottom: 2px; 
+    }
+}

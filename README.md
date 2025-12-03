@@ -1,6 +1,6 @@
 # UNIDAVI - Desenvolvimento Web 2025
 
-![Imagem ou GIF opcional do projeto]
+
 
 ## Descrição
 Neste repositório, serão adicionados todos os arquivos das atividades realizadas na disciplina de Desenvolvimento Web 1.

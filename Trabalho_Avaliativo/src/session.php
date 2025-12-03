@@ -8,11 +8,15 @@
 
 
         public function __construct(){
-            $this->iniciaSessao();
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
         }
 
         private function iniciaSessao(){
-            session_start();
+            if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
             if (isset($_SESSION['usuario'])){
                 $this->dataHoraInicio = $this->recuperaDados('dataHoraInicio');
                 $this->dataHoraUltimoAcesso = date('d-m-Y H:i:s');
