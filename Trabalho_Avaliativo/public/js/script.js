@@ -35,14 +35,19 @@ document.addEventListener('DOMContentLoaded', function(){
 
     botaoAnt.addEventListener('click', function(){
         
-        if(perguntaAtual = 0 || perguntaAtual > perguntas.length){
+        if(perguntaAtual === 0 || perguntaAtual > perguntas.length){
                 botaoAnt.style.display = 'none';
         }else{
             perguntas[perguntaAtual].style.display = 'none';
             perguntaAtual--;
+            if(perguntaAtual === 0){
+                botaoAnt.style.display = 'none';
+
+            }
             perguntas[perguntaAtual].style.display = 'block';
         }
     });
+
 
     if (perguntas.length > 0) { 
         blocoFinal.style.display = 'none';
