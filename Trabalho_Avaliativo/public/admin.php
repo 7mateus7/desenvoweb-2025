@@ -23,9 +23,9 @@
 
         <div class="filtro-container">
             <form action="admin.php" method="GET">
-                <label for="filtro_id"><strong>Filtrar por Setor:</strong></label>
+                <label for="filtro_id"><strong>Filtrar por Dispositivo:</strong></label>
                 <select name="filtro_id" id="filtro_id" onchange="this.form.submit()">
-                    <option value="">Todos os Setores</option>
+                    <option value="">Todos os Dispositivos</option>
                     
                     <?php if (!empty($listaParaMenu)): ?>
                         <?php foreach ($listaParaMenu as $item): ?>
