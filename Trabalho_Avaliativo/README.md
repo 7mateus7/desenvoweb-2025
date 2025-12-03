@@ -24,16 +24,7 @@ Para executar o projeto final, você precisará de:
 
 ## ⚙️ Instalação e Configuração
 
-### 1. Clonar o Repositório
-Primeiro, baixe os arquivos do projeto para sua máquina:
-
-```bash
-git clone [https://seu-repositorio-aqui.git](https://seu-repositorio-aqui.git)
-cd nome-da-pasta-do-projeto
-```
 ## 📋 Pré-requisitos
-
-
 
 Para executar este projeto, você precisará de:
 
@@ -43,11 +34,7 @@ Para executar este projeto, você precisará de:
 
 * **Navegador Web:** Chrome, Firefox ou Edge.
 
-
-
 ---
-
-
 
 ## ⚙️ Passo a Passo de Instalação
 
