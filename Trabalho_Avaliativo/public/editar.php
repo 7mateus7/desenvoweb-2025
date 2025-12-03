@@ -5,7 +5,7 @@
 
     $sessao = new Sessao();
     if(!$sessao->recuperaDados('usuario')){
-        header('Location: login.php');
+        header('Location: login.html');
         exit;
     }
 
