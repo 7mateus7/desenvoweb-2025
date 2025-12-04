@@ -19,7 +19,7 @@
             <a href="logout.php" class="link-logout">Sair</a>
         </div>
 
-        <h1>Dashboard de Qualidade</h1>
+        <h1>Dashboard</h1>
 
         <div class="filtro-container">
             <form action="admin.php" method="GET">
